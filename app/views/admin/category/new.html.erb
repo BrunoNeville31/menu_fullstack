@@ -1,0 +1,23 @@
+<h1>Nova Categoria</h1>
+
+<%= form_with(url: admin_category_index_path, model: @category, methods: :post, locals: true) do |f| %>
+
+  <label for="fname">ACTIVE:</label><br>
+  <%= f.check_box :active, class: "form-control", checked: true %>
+
+  <br/>
+  <label for="fname">NAME:</label><br>
+  <%= f.text_field :name, class: "form-control"%>
+  
+  <br/>
+  <label for="fname">SUBCATEGORY:</label><br>
+  <%= f.check_box :sub_category, class: "form-control"%>
+  
+  <br/>
+  <label for="fname">DESCRIPTION:</label><br>
+  <%= f.text_area :description, class: "form-control"%>
+  
+  <br/>
+  <%= f.submit "Salvar" %>
+
+<%end%> 

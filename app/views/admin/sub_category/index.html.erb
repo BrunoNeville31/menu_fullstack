@@ -1,0 +1,19 @@
+
+<%= link_to "Novo", new_admin_sub_category_path %>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>CATEGORY</th>
+    <th>DESCRIPTION</th>
+  </tr>
+  <% @subcategories.each do |subcategory| %>
+    <tr>
+      <td><%= subcategory.id %></td>
+      <td><%= subcategory.name %></td>
+      <td><%= subcategory.category.name %></td>
+      <td><%= subcategory.description %></td>
+      <td><%= link_to "EDITAR", edit_admin_sub_category_path(subcategory) %></td>
+    </tr>
+  <% end %>
+</table>

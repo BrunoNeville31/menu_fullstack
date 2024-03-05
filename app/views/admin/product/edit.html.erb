@@ -1,0 +1,40 @@
+<h1>Editando Produto</h1>
+
+<%= form_with(url: admin_product_path(@product), model: @product, methods: :patch, locals: true) do |f| %>
+
+  <label for="fname">ACTIVE:</label><br>
+  <%= f.check_box :active, class: "form-control", checked: true%>
+
+  <br/>
+  <label for="fname">NAME:</label><br>
+  <%= f.text_field :name, class: "form-control"%>
+  
+  <br/>
+  <label for="fname">CATEGORY:</label><br>
+  <%= f.select :category_id, Category.visible.map{ |c| [ c.name, c.id ] } %>
+
+  <br/>
+  <label for="fname">SUB CATEGORY:</label><br>
+  <%= f.select :sub_category, SubCategory.visible.map{ |c| [ c.name, c.id ] } %>
+  
+  <br/>
+  <label for="fname">DESCRIPTION:</label><br>
+  <%= f.text_area :description, class: "form-control"%>
+
+  <br/>
+  <label for="fname">PRICE:</label><br>
+  <%= f.text_field :price, class: "form-control"%>
+
+  <br/>
+  <label for="fname">PRICE PROMOTIONAL:</label><br>
+  <%= f.text_field :promotional_price, class: "form-control"%>
+
+  <br/>
+  <label for="fname">IS PROMOTIONAL:</label><br>
+  <%= f.check_box :is_promotional, class: "form-control", checked: true%>
+
+  
+  <br/>
+  <%= f.submit "Salvar" %>
+
+<%end%> 

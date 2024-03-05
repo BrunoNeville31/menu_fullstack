@@ -1,0 +1,23 @@
+<h1>Nova SUB Categoria</h1>
+
+<%= form_with(url: admin_sub_category_index_path, model: @subcategory, methods: :post, locals: true) do |f| %>
+
+  <label for="fname">ACTIVE:</label><br>
+  <%= f.check_box :active, class: "form-control", checked: true%>
+
+  <br/>
+  <label for="fname">NAME:</label><br>
+  <%= f.text_field :name, class: "form-control"%>
+  
+  <br/>
+  <label for="fname">CATEGORY:</label><br>
+  <%= f.select :category_id, Category.visible.map{ |c| [ c.name, c.id ] } %>
+  
+  <br/>
+  <label for="fname">DESCRIPTION:</label><br>
+  <%= f.text_area :description, class: "form-control"%>
+  
+  <br/>
+  <%= f.submit "Salvar" %>
+
+<%end%> 

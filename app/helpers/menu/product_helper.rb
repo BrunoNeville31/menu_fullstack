@@ -1,0 +1,2 @@
+module Menu::ProductHelper
+end

@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 50 } %>
+  username: root
+  password: sunar2024
+  host: 127.0.0.1
+
+development:
+  <<: *default
+  database: menu_rails_development
+
+test:
+  <<: *default
+  database: menu_rails_test
+
+production:
+  <<: *default
+  database: menu_rails_production
+  username: menu_rails
+  password: <%= ENV["MENU_RAILS_DATABASE_PASSWORD"] %>

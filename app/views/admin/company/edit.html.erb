@@ -1,0 +1,22 @@
+<h1>Editando EMPRESA: <%= @company.name %> </h1>
+
+<%= form_with(url: admin_company_path(@company), model: @company, methods: :patch, locals: true) do |f| %>
+
+  <br/>
+  <label for="fname">NAME:</label><br>
+  <%= f.text_field :name, class: "form-control"%>
+
+  <br/>
+  <label for="fname">NAME LOGO:</label><br>
+  <%= f.text_field :logo_name, class: "form-control"%>
+
+  
+  <br/>
+  <label for="fname">LOGO:</label><br>
+  <%= f.file_field :logo, class: "form-control"%>
+
+  
+  <br/>
+  <%= f.submit "Salvar" %>
+
+<%end%> 

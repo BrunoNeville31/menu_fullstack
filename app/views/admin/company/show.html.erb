@@ -1,0 +1,21 @@
+
+<h1> EMPRESA <%= @company.name %> </h1>
+
+<%= link_to "EDITAR", edit_admin_company_path%>
+
+<br/>
+NOME: <%= @company.name%>
+
+<br/>
+NOME(logo): <%= @company.logo_name%>
+
+<br/>
+<br/>
+<br/>
+LOGO: <%= image_tag(@company.logo)%>
+
+<br/>
+<br/>
+<br/>
+
+<%= render inline: @qr%>

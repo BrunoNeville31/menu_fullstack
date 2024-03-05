@@ -1,0 +1,2 @@
+module Menu::SubCategoryHelper
+end

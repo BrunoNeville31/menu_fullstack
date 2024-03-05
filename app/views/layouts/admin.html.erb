@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MenuRails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <ul>
+      <li>
+        <%= link_to "DASHBOARD", admin_dashboard_index_path %>
+      </li>
+      <li>
+        <%= link_to "CATEGORIAS", admin_category_index_path %>
+      </li>
+      <li>
+        <%= link_to "SUB-CATEGORIAS", admin_sub_category_index_path %>
+      </li>
+      <li>
+        <%= link_to "PRODUTOS", admin_product_index_path %>
+      </li>
+      <li>
+        <%= link_to "EMPRESA", admin_company_path(1) %>
+      </li>
+
+
+      <hr/>
+      <li>
+        <%= link_to "SAIR", destroy_admin_session_path%>
+      </li>  
+    </ul>
+    <%= yield %>
+  </body>
+</html>
